@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html ng-app="hutuBlog" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+    <link rel="stylesheet" type="text/css" href="css/pugin.css">
+</head>
+<body  ng-controller="myController">
+<header>
+    <div class="float-left header-logo">
+        <img src="images/hutulogo.png" alt="logo">
+    </div>
+    <div class="float-right header-land">
+        <ul>
+            <li class="float-left"  ng-show="isShow">
+                <div class="dropdown">
+                    <!--<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Dropdown
+                        <span class="caret"></span>
+                    </button>-->
+                    <img id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-src={{avatar}} width="100%">
+                    <span class="caret"></span>
+                    <span>{{welcome}}</span>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#/setSelfData">设置个人资料</a></li>
+                        <li><a ng-click="logout()" href="#/">注销</a></li>
+                        <!--<li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>-->
+                    </ul>
+                </div>
+            </li>
+            <!--<li class="float-left"  ng-show="isShow">
+                <i></i>
+                <img src="images/2.jpg" width="100%">
+                <span>{{welcome}}</span>
+            </li>-->
+            <li class="float-left" ng-hide="isShow">
+                <i></i>
+                <span data-toggle="modal" data-target="#myEnterModal">登陆</span>
+            </li>
+            <li class="float-left"  ng-hide="isShow">
+                <i></i>
+                <span data-toggle="modal" data-target="#myLoginModal">注册</span>
+            </li>
+
+        </ul>
+    </div>
+</header>
+<section>
+    <div ng-show="isShow"  class="section-menu float-left">
+        <div class="section-menu-header">
+            <div class="float-left">
+                <a href="#/write">
+                <i></i>
+                <span>新建</span>
+                </a>
+            </div>
+            <div class="float-left">
+                <i></i>
+                <span>上传</span>
+            </div>
+        </div>
+        <ul class="section-menu-content">
+            <li class="active">
+              <a href="#/">
+                <i></i>
+                <span>她的心情</span>
+              </a>
+            </li>
+            <li class="my-artical" ng-click="getUserName();">
+              <a href="#/myArtical">
+                <i></i>
+                <span>我的心情</span>
+              </a>
+            </li>
+            <li ng-disabled="true">
+                <i></i>
+                <span>分享给她</span>
+            </li>
+            <li class="my-artical" ng-click="getDraft();">
+                <a href="#/getdraft">
+                <i></i>
+                <span>草稿箱</span>
+                </a>
+            </li>
+            <li class="my-artical" ng-click="getUserName();">
+                <a href="#/dustbin">
+                    <i></i>
+                    <span>垃圾箱</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div ng-hide="isShow" class="section-menu float-left">
+        <div class="section-menu-header-theme" >
+            <h3>
+                <b>欢迎使用糊涂Blog</b>
+            </h3>
+             <p>——— 记录、分享工作和生活点滴</p>
+        </div>
+        <div class="section-menu-content-speak">
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;纸，是木制品，需要砍树才能造成大家手里面常见的纸，纸多了，砍伐的树也就多了，然而砍树容易成树难，长的速度总是比不上砍的速度，渐渐的，树就变少了，环境就受到了影响，继而影响人们的生活环境，因此，需要大家一起来节约用纸，才能适当砍伐森林，保护环境~！
+            </p>
+        </div>
+    </div>
+    <input type="hidden" ng-model="userState">
+    <div id="section-content" class="section-content float-left" >
+          <div  class="clear" ng-view></div>
+    </div>
+</section>
+<footer></footer>
+<directive-login ></directive-login>
+<directive-enter user-state="userState"  ></directive-enter>
+<script src="js/libs/jquery.min.js" type="text/javascript"></script>
+<script src="js/libs/bootstrap.js" type="text/javascript"></script>
+<script src="js/libs/angular.js" type="text/javascript"></script>
+<script src="js/libs/angular-route.js" type="text/javascript"></script>
+
+<script src="app.js" type="text/javascript"></script>
+<script src="js/directive/directiveLogin.js" type="text/javascript"></script>
+<script src="js/directive/directiveEnter.js" type="text/javascript"></script>
+<script src="js/directive/driectiveArticalContent.js" type="text/javascript"></script>
+<script src="js/controllers/myController.js" type="text/javascript"></script>
+<script src="js/controllers/othersCtrl.js" type="text/javascript"></script>
+<script src="js/controllers/newWrite.js" type="text/javascript"></script>
+<script src="js/controllers/myArtical.js" type="text/javascript"></script>
+<script src="js/controllers/myAtricalContent.js" type="text/javascript"></script>
+<script src="js/controllers/setSelfData.js" type="text/javascript"></script>
+<script src="js/controllers/dustbin.js" type="text/javascript"></script>
+<script src="js/controllers/draft.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    })
+</script>
+</body>
+</html>

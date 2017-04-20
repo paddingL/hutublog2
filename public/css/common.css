@@ -1,0 +1,15 @@
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.clear:after{
+    overflow: hidden;
+    display: block;
+    clear: both;
+    content: "";
+}
+.clear{
+    zoom: 1;
+}

@@ -1,0 +1,13 @@
+
+<div>
+    <ul ng-repeat="item in data">
+        <li ng-click="selectHuifu(item)" ng-class="{true:'huifu',false:'dustbin'}[item.ishuifu]">
+          {{item.header}}
+        </li>
+    </ul>
+    <div class="clear"></div>
+    <div style="float: right; margin-top: 5%; margin-right: 5%;">
+        <button ng-show="showBtn" ng-click="huifuData()" type="button" class="btn btn-lg btn-primary ">恢复</button>
+        <button ng-show="showBtn" type="button" ng-click="emporty()" class="btn btn-lg btn-primary ">清空</button>
+    </div>
+</div>

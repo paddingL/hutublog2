@@ -1,0 +1,19 @@
+<div ng-repeat="item in data" class="section-content-row clear">
+    <div class="section-content-img float-left">
+        <a href="/user/profile/772" title="">
+            <img ng-src={{item.avatar}} alt="" class="img-rounded">
+        </a>
+    </div>
+    <div class="section-content-diary float-left">
+        <h4><a class="artical-tiaozhuan" ng-click="postAtricalContent(item)" href="">{{item.header}}</a>
+            <small>[默认日记]</small>
+        </a></h4>
+        <div class="diary-content"><p>{{item.content}}</p></div>
+        <div class="diary-content-footer-bar">{{item.datetime}}
+            <small>0回复</small>
+            <small>8阅读</small>
+            <small>0喜欢</small>
+        </div>
+    </div>
+
+</div>

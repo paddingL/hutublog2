@@ -1,0 +1,16 @@
+<div style="width:80% ;margin:0 auto; height: 100%;">
+   <div class="form-group artical-header">
+     <label for="exampleInputName2">文章标题</label>
+     <input type="text" ng-model="articalHeader" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+   </div>
+    <div class="form-group artical-content">
+        <label for="exampleInputName1">文章内容</label>
+        <textarea id="exampleInputName1" ng-model="articalContent" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="form-group artical-footer">
+        <button type="button" ng-click="insertData();" class="btn btn-primary  active">发送</button>
+        <button type="button" class="btn btn-primary  active">取消</button>
+        <button ng-click="savecaogao()" type="button" class="btn btn-primary  active">存入草稿</button>
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div ng-repeat="item in data" class="section-content-row clear">
+    <div class="section-content-img float-left">
+        <a href="/user/profile/772" title="">
+            <img ng-src={{avatar}} alt="" class="img-rounded">
+        </a>
+    </div>
+    <div class="section-content-diary float-left">
+        <h4><a ng-click="postAtricalContent(item)" href="#/myAtricalContent">{{item.header}}</a><a href="">
+            <small>[默认日记]</small>
+        </a></h4>
+        <div class="diary-content"><p>{{item.content}}</p></div>
+        <div class="diary-content-footer-bar">{{item.datetime}}
+            <small>0回复</small>
+            <small>8阅读</small>
+            <small>0喜欢</small>
+        </div>
+    </div>
+    <div class="del-item" ng-click="deleItem(item)">
+        <div id="triangle-left">
+        </div>
+        <div style="position: absolute;top:0;bottom: 0; width:64% ;right:17px; background: red;">
+            删除
+        </div>
+    </div>
+</div>
+<input type="hidden" ng-model="postAtricalData">

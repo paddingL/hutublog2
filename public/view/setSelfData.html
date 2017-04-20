@@ -1,0 +1,46 @@
+
+<div>
+    <form id="showDataForm"  method="post" name="userForm"enctype="multipart/form-data" class="form-signin">
+        <h3 class="form-signin-heading">设置个人资料</h3>
+
+        <label for="password">用户名：</label>
+        <input autocomplete="off" type="password"  id="password"  class="form-control" placeholder="Password"
+               ng-model="password"
+               name="password"
+               ng-minlength="6"
+               ng-maxlength="15"
+                />
+        <label for="email">邮箱</label>
+        <input type="email" id="email" name="email" class="form-control"  placeholder="Email"
+               ng-model="email"
+               ng-minlength="5"
+               ng-maxlength="20"
+               />
+        <label for="phone">手机号：</label>
+        <input type="text"  id="phone" class="form-control"  placeholder="Phone"
+               ng-model="phone"
+               name="phone"
+               ng-minlength="11"
+               ng-maxlength="11"
+                />
+        <label for="file">是否上传头像</label>
+        <input type="checkbox" id="checkbox" name="checkbox"
+               ng-model="checkbox" value="设置头像"
+                />
+        <label ng-if="checkbox" for="file">上传头像</label>
+        <input ng-if="checkbox" type="file" id="file" name="file" class="form-control"  placeholder="file"
+               ng-model="file" value="设置头像"
+                />
+        <button ng-disabled="userForm.email.$error.minlength||userForm.email.$error.maxlength||userForm.email.$error.required||userForm.password.$error.minlength||userForm.password.$error.maxlength||userForm.password.$error.required||userForm.phone.$error.maxlength||userForm.phone.$error.minlength" class="btn btn-lg btn-primary btn-block" ng-click="setMyData()" data-dismiss="modal"  name="file" value="注册" type="button">登录</button>
+    </form>
+
+    <div class="alert alert-danger juzhong" role="alert" ng-show="userForm.password.$error.minlength">密码不能少于6位</div>
+    <div class="alert alert-danger juzhong" role="alert" ng-show="userForm.password.$error.maxlength">密码不能大于15位</div>
+    <div class="alert alert-danger juzhong" role="alert" ng-show="userForm.email.$error.minlength">邮箱不能少于5位</div>
+    <div class="alert alert-danger juzhong" role="alert" ng-show="userForm.email.$error.maxlength">邮箱不能大于20位</div>
+    <div class="alert alert-danger juzhong" role="alert" ng-show="userForm.email.$error.email">邮箱格式不对</div>
+    <div class="alert alert-danger juzhong" role="alert" ng-show="userForm.username.$error.minlength">手机号太短了吧</div>
+    <div class="alert alert-danger juzhong" role="alert" ng-show="userForm.username.$error.maxlength">手机号太长了吧</div>
+   <!-- <div class="alert alert-danger juzhong" role="alert" ng-show="userForm.email.$error.required">邮箱不能为空</div>-->
+
+</div>
